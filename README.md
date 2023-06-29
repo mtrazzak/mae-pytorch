@@ -43,7 +43,7 @@ To use the MAE framework, follow these steps:
 1. Clone this repository to your local machine:
 
 ```bash
-git clone https://github.com/username/repo.git
+git clone https://github.com/mtrazzak/lightning-mae.git
 ```
 
 2. Install the required dependencies by running the following command:
@@ -52,31 +52,7 @@ git clone https://github.com/username/repo.git
 pip install -r requirements.txt
 ```
 
-This command will install the necessary packages, including PyTorch, torchvision, timm, and transformers.
-
-Certainly! Here's an updated version of the ReadMe file with improved headings, additional details on the MAE framework, and clearer instructions:
-
-## Masked Autoencoders
-
-This repository provides an implementation of the Masked Autoencoder (MAE) framework, a deep learning model for unsupervised representation learning. The MAE model is designed to reconstruct input data from partially masked versions, allowing it to learn meaningful representations that capture important features and patterns in the data. This ReadMe guide provides instructions on installing the repository and training the MAE model.
-
-## Installation
-
-To use the MAE framework, follow these steps:
-
-1. Clone this repository to your local machine:
-
-   ```
-   git clone https://github.com/mtrazzak/lightning-mae.git
-   ```
-
-2. Install the required dependencies by running the following command:
-
-   ```
-   pip install -r requirements.txt
-   ```
-
-   This command will install the necessary packages, including PyTorch, torchvision, timm, and transformers.
+This command will install the necessary packages, including PyTorch, Lightning, torchvision, timm, and transformers.
 
 ## Training the Masked Autoencoder (MAE) Model
 
@@ -84,7 +60,7 @@ To train the MAE model with the default parameters and masking ratio, follow the
 
 1. Prepare your training data: The MAE model expects input data in tensor format. You can preprocess your dataset and convert it into tensors using appropriate techniques and libraries.
 
-2. Import the `MaskedAutoencoderLIT` class from the `masked_autoencoder` module:
+2. Import the `MaskedAutoencoderLIT` class:
 
    ```python
    from mae import MaskedAutoencoder
@@ -114,7 +90,7 @@ To train the MAE model with the default parameters and masking ratio, follow the
 5. Create a Lightning `Trainer` object and initiate the training process using the `fit` method:
 
    ```python
-   from pytorch_lightning import Trainer
+   from lightning import Trainer
 
    trainer = Trainer(max_epochs=10, gpus=1)
    trainer.fit(model, train_dataloader)
@@ -134,7 +110,7 @@ To train the MAE model with the default parameters and masking ratio, follow the
 
 To convert the trained MAE model to a Vision Transformer (ViT) model for fine-tuning, follow these additional steps:
 
-1. Import the `get_vit_from_mae` function from the `conversion_utils` module:
+1. Import the `get_vit_from_mae` function:
 
    ```python
    from mae_to_vit import get_vit_from_mae
