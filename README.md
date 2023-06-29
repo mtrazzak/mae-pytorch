@@ -106,6 +106,9 @@ To train the MAE model with the default parameters and masking ratio, follow the
 
    The trained model can be loaded later for inference or fine-tuning.
 
+7. Notes:
+   Training seems to be more stable and converge to a better optimimum when using `torch.compile` on the model. This uses the Tritron random number generator and this seems to be a better initialisation for the model.
+
 ## Converting the MAE Model to a Vision Transformer (ViT)
 
 To convert the trained MAE model to a Vision Transformer (ViT) model for fine-tuning, follow these additional steps:
