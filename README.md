@@ -143,9 +143,7 @@ To convert the trained MAE model to a Vision Transformer (ViT) model for fine-tu
 2. Load the trained MAE model using the `MaskedAutoencoder.load_from_checkpoint` method:
 
    ```python
-   trained_model =
-
- MaskedAutoencoder.load_from_checkpoint('masked_autoencoder.pt')
+   trained_model = MaskedAutoencoder.load_from_checkpoint('masked_autoencoder.pt')
    ```
 
 3. Convert the trained MAE model to a ViT model using the `get_vit_from_mae` function:
